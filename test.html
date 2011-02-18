@@ -7,56 +7,60 @@
     <script src="jQueryMustache.js" type="text/javascript"></script>
     
     <script id="templateTest" type="x-tmpl-mustache">
+
         <div id="Test">
+
             {{#Sections}}
                 <h3>{{SectionId}} - {{SectionName}}</h3>
                 <ul>
-					{{#Questions}}
-						<li>{{QuestionId}} - {{QuestionText}}</li>
-					{{/Questions}}
-				</ul>
+		    {{#Questions}}
+		        <li>{{QuestionId}} - {{QuestionText}}</li>
+		    {{/Questions}}
+		</ul>
             {{/Sections}}
+
         </div>
+
     </script>
 
     <script language="javascript" type="text/javascript">
-	
-		var data = 
-		{
-			Sections: 
-			[
-				{
-					SectionId: 1,
-					SectionName: 'Section One',
-					Questions: [
-						{
-							QuestionId: 1,
-							QuestionText: 'Question one in section one?'
-						},
-						{
-							QuestionId: 2,
-							QuestionText: 'Question two in section one?'
-						}
-					]
-				},
-				{
-					SectionId: 2,
-					SectionName: 'Section Two',
-					Questions: [
-						{
-							QuestionId: 1,
-							QuestionText: 'Question one in section two?'
-						}
-					]
-				}
-			]		
-		};
+
+    var data = 
+    {
+        Sections: 
+        [
+            {
+                SectionId: 1,
+                SectionName: 'Section One',
+                Questions: [
+                    {
+		        QuestionId: 1,
+		        QuestionText: 'Question one in section one?'
+		    },
+		    {
+		        QuestionId: 2,
+		        QuestionText: 'Question two in section one?'
+		    }
+		]
+	    },
+	    {
+	        SectionId: 2,
+		SectionName: 'Section Two',
+		Questions: [
+		    {
+		        QuestionId: 1,
+			QuestionText: 'Question one in section two?'
+		    }
+		]
+	    }
+	]		
+    };
         
-		$(function () {
+    $(function () {
 
-			$('#templateTest').mustache(data).appendTo('body');
+        $('#templateTest').mustache(data).appendTo('body');
 
-		});
+    });
 
     </script>
 </head>
