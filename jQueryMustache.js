@@ -11,11 +11,9 @@
 // Licensed under the MIT license.
 
 (function ($) {
-    $.fn.mustache = function (data) {
-        if (data && typeof data === 'object') {
-            if (Mustache) {
-                return $(Mustache.to_html(this.text(), data));
-            }
+    $.fn.mustache = function (data, partial, stream) {
+    	if (Mustache && data) {
+    	    return $(Mustache.to_html(this.text(), data, partial, stream));
         }
     };
 })(jQuery);
