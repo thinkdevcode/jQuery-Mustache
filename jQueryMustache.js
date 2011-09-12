@@ -13,7 +13,7 @@
 (function ($) {
     $.fn.mustache = function (data, partial, stream) {
     	if (Mustache && data) {
-    	    return $(Mustache.to_html(this.text(), data, partial, stream));
+    	    return $(Mustache.to_html(this.html(), data, partial, stream));
         }
     };
 })(jQuery);
